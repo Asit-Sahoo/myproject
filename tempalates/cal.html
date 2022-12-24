@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h1>USER FORM</h1>
+    <form method="post" action="{% url 'submitform' %}">
+        {% csrf_token %}
+        <!--{{form}}-->
+        <div>
+        <label>Value 1</label>
+        <input type="text" name="num1" value="{{n1}}" class="form-control"/>
+        </div>
+       <div>
+        <label>Value 2</label>
+        <input type="text" name="num2" value="{{n2}}" class="form-control"/>
+       </div>
+        <br>
+        <div class="pt-2">
+            <button type="submit">SAVE</button>
+        </div>
+        <h2>output</h2>
+        <input type="text" value="{{output}}"/>
+    </form>
+</section>
+</body>
+</html>
+{% endblock %}
